@@ -7,19 +7,15 @@
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.ali</groupId>
     <artifactId>superbaby</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
-
-    <name>superbaby</name>
-
-
+    <packaging>jar</packaging>
 
     <dependencies>
+        <!--框架包-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.ali</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
@@ -28,6 +24,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>

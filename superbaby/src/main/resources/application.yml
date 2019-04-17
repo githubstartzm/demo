@@ -1,0 +1,45 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8080
+  connection-timeout: 5000ms
+  servlet:
+    context-path: /
+
+logging:
+  level:
+    org:
+      springframework: error
+    com:
+      hotman:
+        myboot: DEBUG
+
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /static/**
+  resources:
+    add-mappings: false
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/myboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+      username: root
+      password: root
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+#pagehelper:
+#  helperDialect: mysql
+#  reasonable: true
+#  supportMethodsArguments: true
+#  params: count=countSql
+#  returnPageInfo: check
