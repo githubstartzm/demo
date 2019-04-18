@@ -1,8 +1,8 @@
 package com.ali.superz.service.impl;
 
 
+import com.ali.common.util.EntityForm.UserEntity;
 import com.ali.superz.dao.UserMapper;
-import com.ali.superz.entity.UserEntity;
 import com.ali.superz.service.UserService;
 import com.ali.superz.utils.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.ali.superz.dao;
 
-import com.ali.superz.entity.UserEntity;
+import com.ali.common.util.EntityForm.UserEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

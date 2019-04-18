@@ -1,8 +1,9 @@
 package com.ali.superz.controller;
 
 
-import com.ali.superz.entity.Result;
-import com.ali.superz.entity.UserEntity;
+
+import com.ali.common.util.EntityForm.UserEntity;
+import com.ali.common.util.Result;
 import com.ali.superz.service.UserService;
 import com.ali.superz.utils.ValidatorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,15 +36,6 @@ public class UserController {
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     public Result userRegister(@Valid @RequestBody UserEntity userEntity, BindingResult bindingResult) {
 
-      /*if (bindingResult.hasErrors()) {
-            return new ResultEntity(400,bindingResult.getAllErrors().get(0).getDefaultMessage());
-        }
-
-        if(userService.userRegister(userEntity)){
-            return new ResultEntity(200,"register success");
-        }
-
-        return new ResultEntity(400,"register failed");*/
 
         ValidatorUtils.validateEntity(userEntity);
         Boolean flag = userService.userRegister(userEntity);

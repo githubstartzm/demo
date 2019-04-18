@@ -1,7 +1,6 @@
-package com.ali.superz.entity;
+package com.ali.common.util.EntityForm;
 
 import org.hibernate.validator.constraints.Length;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -36,7 +35,7 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(String userId, String username, String password,  String phone, String email, String adress, String idCard, String status) {
+    public UserEntity(String userId, String username, String password, String phone, String email, String adress, String idCard, String status) {
         this.userId = userId;
         this.username = username;
         this.password = password;

@@ -7,14 +7,18 @@
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.ali</groupId>
+
     <artifactId>superz</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>superz</name>
+    <packaging>jar</packaging>
 
     <dependencies>
 
-
+        <!--框架包-->
+        <dependency>
+            <groupId>com.ali</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0</version>
+        </dependency>
 
     </dependencies>
 
@@ -23,6 +27,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>
