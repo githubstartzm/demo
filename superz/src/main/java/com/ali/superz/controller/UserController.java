@@ -26,7 +26,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    //用户注册
+    /**
+     *  用户注册
+     * @param userEntity
+     * @param bindingResult
+     * @return
+     */
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     public Result userRegister(@Valid @RequestBody UserEntity userEntity, BindingResult bindingResult) {
 
@@ -45,7 +50,12 @@ public class UserController {
         return  flag ? Result.ok("success") : Result.error("failed");
     }
 
-    //用户注册
+    /**
+     * 用户登录
+     * @param userEntity
+     * @param bindingResult
+     * @return
+     */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public Result userLogin(@Validated @RequestBody UserEntity userEntity, BindingResult bindingResult) {
         Boolean flag = userService.userLogin(userEntity);
