@@ -5,4 +5,15 @@
     <select id="login" parameterType="com.ali.superbaby.form.LoginForm" resultType="com.ali.superbaby.entity.LoginEntity">
         select * from mb_user where username = #{username} and password = #{password}
     </select>
+
+    <insert id="userRegister" parameterType="com.ali.common.util.EntityForm.UserEntity"  >
+        insert into user(userId,username,password,phone,email,adress,status) values (#{userId},#{username},#{password},#{phone},#{email},#{adress},#{status});
+        <selectKey resultType="java.lang.String" keyProperty="userId" >
+            SELECT @@IDENTITY AS ID
+        </selectKey>
+    </insert>
+
+    <select id="getUserIdByUsername" parameterType="java.lang.String" resultType="java.lang.String">
+        select userId from user where username = #{username};
+    </select>
 </mapper>

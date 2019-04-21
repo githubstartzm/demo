@@ -34,7 +34,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public Result userRegister(@Valid @RequestBody UserEntity userEntity, BindingResult bindingResult) {
+    public Result userRegister(@RequestBody UserEntity userEntity, BindingResult bindingResult) {
 
 
         ValidatorUtils.validateEntity(userEntity);
@@ -49,7 +49,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Result userLogin(@Validated @RequestBody UserEntity userEntity, BindingResult bindingResult) {
+    public Result userLogin(@RequestBody UserEntity userEntity, BindingResult bindingResult) {
         Boolean flag = userService.userLogin(userEntity);
         return flag ? Result.ok(): Result.error("");
     }
