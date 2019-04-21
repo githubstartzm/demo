@@ -1,10 +1,11 @@
 /* Copyright (C) 2019-2019 Hangzhou HSH Co. Ltd.
  * All right reserved.*/
-package com.ali.superbaby.util;
+package com.ali.common.exception;
 
+import com.ali.common.constant.RunExceptionEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 运行时异常

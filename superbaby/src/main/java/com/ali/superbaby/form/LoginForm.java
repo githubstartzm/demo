@@ -4,6 +4,7 @@ package com.ali.superbaby.form;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -13,6 +14,8 @@ import java.io.Serializable;
  */
 @Data
 public class LoginForm implements Serializable {
+    @NotBlank(message = "用户名不能为空")
     private String username;
+    @NotBlank(message = "用户名不能为空")
     private String password;
 }

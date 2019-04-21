@@ -2,16 +2,14 @@
  * All right reserved.*/
 package com.ali.superbaby.service.impl;
 
-import com.ali.common.util.EntityForm.UserEntity;
+import com.ali.common.util.EncryptUtil;
 import com.ali.superbaby.dao.UserDao;
 import com.ali.superbaby.entity.LoginEntity;
+import com.ali.superbaby.entity.UserEntity;
 import com.ali.superbaby.form.LoginForm;
 import com.ali.superbaby.service.UserService;
-import com.ali.superbaby.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 /**
  * @author ThatMan
@@ -28,17 +26,11 @@ public class UserServiceImpl implements UserService {
         if (null != userDao.getUserIdByUsername(userEntity.getUsername())) {
             return false;
         }
-        UUID uuid = UUID.randomUUID();
-        userEntity.setUserId(uuid.toString());
-        userEntity.setPassword(MD5Utils.encodeByMD5(userEntity.getPassword()));
-        userEntity.setStatus("NORMAL");
-        System.out.println(userEntity.getPassword().length());
-        Integer result = userDao.userRegister(userEntity);
-        boolean flag = false;
-        if (result != null && result > 0) {
-            flag = true;
-        }
-        return flag;
+
+        //通过手机号作为盐对密码进行加密
+        EncryptUtil.getPassword(userEntity.getPassword(), userEntity.getPhone());
+        int result = userDao.userRegister(userEntity);
+        return result == 0 ? false : true;
     }
 
     @Override

@@ -31,6 +31,7 @@
         <fastjson.version>1.2.9</fastjson.version>
         <log4j.version>1.7.5</log4j.version>
         <httpcore.version>4.0.1</httpcore.version>
+        <commons.lang.version>2.6</commons.lang.version>
     </properties>
 
     <dependencies>
@@ -115,6 +116,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons.lang.version}</version>
         </dependency>
     </dependencies>
 

@@ -3,8 +3,8 @@
 package com.ali.superbaby.dao;
 
 
-import com.ali.common.util.EntityForm.UserEntity;
 import com.ali.superbaby.entity.LoginEntity;
+import com.ali.superbaby.entity.UserEntity;
 import com.ali.superbaby.form.LoginForm;
 
 /**
@@ -17,5 +17,5 @@ public interface UserDao {
 
     String getUserIdByUsername(String username);
 
-    Integer userRegister(UserEntity userEntity);
+    int userRegister(UserEntity userEntity);
 }

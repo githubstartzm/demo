@@ -1,6 +1,6 @@
 /* Copyright (C) 2019-2019 Hangzhou HSH Co. Ltd.
  * All right reserved.*/
-package com.ali.superbaby.util;
+package com.ali.common.constant;
 
 /**
  * @author simon

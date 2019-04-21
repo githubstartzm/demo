@@ -1,7 +1,8 @@
 /* Copyright (C) 2019-2019 Hangzhou HSH Co. Ltd.
  * All right reserved.*/
-package com.ali.superbaby.util;
+package com.ali.common.exception;
 
+import com.ali.common.constant.RunExceptionEnum;
 import com.ali.common.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
@@ -42,21 +43,19 @@ public class ExceptionHandler {
 
     @org.springframework.web.bind.annotation.ExceptionHandler(NoHandlerFoundException.class)
     public Result handlerNoFoundException(Exception e) {
+        log.error(e.getMessage(), e);
         return Result.error(404, "路径不存在，请检查路径是否正确");
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(DuplicateKeyException.class)
     public Result handleDuplicateKeyException(DuplicateKeyException e) {
+        log.error(e.getMessage(), e);
         return Result.error(RunExceptionEnum.FILE_DUPLICATE.getCode(), "数据库中已存在该记录");
     }
 
-  /*  @org.springframework.web.bind.annotation.ExceptionHandler(AuthorizationException.class)
-    public Result handleAuthorizationException(AuthorizationException e) {
-        return Result.error(RunExceptionEnum.NO_AUTH.getCode(), RunExceptionEnum.NO_AUTH.getMsg());
-    }*/
-
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
     public Result handleException(Exception e) {
+        log.error(e.getMessage(), e);
         return Result.error(RunExceptionEnum.SYS_BUSY.getCode(), RunExceptionEnum.SYS_BUSY.getMsg());
     }
 }
