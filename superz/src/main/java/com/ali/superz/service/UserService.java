@@ -1,7 +1,7 @@
 package com.ali.superz.service;
 
 
-import com.ali.common.util.EntityForm.UserEntity;
+import com.ali.common.util.entityForm.UserEntity;
 
 public interface UserService {
     Boolean userRegister(UserEntity userEntity);

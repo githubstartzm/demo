@@ -50,7 +50,7 @@ public class ExceptionHandler {
         return Result.error(RunExceptionEnum.FILE_DUPLICATE.getCode(), "数据库中已存在该记录");
     }
 
-  /*  @org.springframework.web.bind.annotation.ExceptionHandler(AuthorizationException.class)
+    /*@org.springframework.web.bind.annotation.ExceptionHandler(AuthorizationException.class)
     public Result handleAuthorizationException(AuthorizationException e) {
         return Result.error(RunExceptionEnum.NO_AUTH.getCode(), RunExceptionEnum.NO_AUTH.getMsg());
     }*/

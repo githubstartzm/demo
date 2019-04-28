@@ -1,4 +1,4 @@
-package com.ali.common.util.EntityForm;
+package com.ali.common.util.entityForm;
 
 import org.hibernate.validator.constraints.Length;
 import javax.validation.Valid;

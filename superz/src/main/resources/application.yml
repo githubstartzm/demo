@@ -3,7 +3,7 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
-  port: 8081
+  port: 8080
   connection-timeout: 5000ms
   servlet:
     context-path: /
@@ -25,7 +25,7 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/myboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+      url: jdbc:mysql://192.168.11.128:3306/myboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
       username: root
       password: root
   servlet:
