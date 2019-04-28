@@ -42,11 +42,10 @@ public class UserController {
     /**
      * 用户登录
      * @param userEntity
-     * @param bindingResult
      * @return
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Result userLogin(@Validated @RequestBody UserEntity userEntity, BindingResult bindingResult) {
+    public Result userLogin(@RequestBody UserEntity userEntity) {
         Boolean flag = userService.userLogin(userEntity);
         return flag ? Result.ok(): Result.error("");
     }
