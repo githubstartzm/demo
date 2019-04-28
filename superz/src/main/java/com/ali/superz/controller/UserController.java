@@ -2,8 +2,8 @@ package com.ali.superz.controller;
 
 
 
-import com.ali.common.util.entityForm.UserEntity;
 import com.ali.common.util.Result;
+import com.ali.common.util.entityForm.UserEntity;
 import com.ali.superz.service.UserService;
 import com.ali.superz.utils.ValidatorUtils;
 import org.springframework.beans.factory.annotation.Autowired;

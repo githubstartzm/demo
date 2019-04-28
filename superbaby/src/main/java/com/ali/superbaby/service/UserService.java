@@ -3,6 +3,7 @@
 package com.ali.superbaby.service;
 
 
+import com.ali.superbaby.entity.UserEntity;
 import com.ali.superbaby.form.LoginForm;
 
 /**
@@ -12,4 +13,6 @@ import com.ali.superbaby.form.LoginForm;
  */
 public interface UserService {
     boolean login(LoginForm loginForm);
+
+    boolean userRegister(UserEntity userEntity);
 }
