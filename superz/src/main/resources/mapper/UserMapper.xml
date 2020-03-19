@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ali.superz.dao.UserMapper">
 
-    <insert id="userRegister" parameterType="UserEntity"  >
+    <insert id="userRegister" parameterType="com.ali.common.util.entityForm.UserEntity"  >
       insert into user(userId,username,password,phone,email,adress,status) values (#{userId},#{username},#{password},#{phone},#{email},#{adress},#{status});
         <selectKey resultType="java.lang.String" keyProperty="userId" >
             SELECT @@IDENTITY AS ID
@@ -15,7 +15,7 @@
         select userId from user where username = #{username};
     </select>
 
-    <select id="getUserByUsername" parameterType="java.lang.String" resultType="UserEntity">
+    <select id="getUserByUsername" parameterType="java.lang.String" resultType="com.ali.common.util.entityForm.UserEntity">
         select userId,username,password from user where username = #{username};
     </select>
 

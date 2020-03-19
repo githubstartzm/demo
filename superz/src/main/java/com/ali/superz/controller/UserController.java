@@ -2,8 +2,8 @@ package com.ali.superz.controller;
 
 
 
-import com.ali.common.util.EntityForm.UserEntity;
 import com.ali.common.util.Result;
+import com.ali.common.util.entityForm.UserEntity;
 import com.ali.superz.service.UserService;
 import com.ali.superz.utils.ValidatorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,13 +30,10 @@ public class UserController {
     /**
      *  用户注册
      * @param userEntity
-     * @param bindingResult
      * @return
      */
     @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public Result userRegister(@RequestBody UserEntity userEntity, BindingResult bindingResult) {
-
-
+    public Result userRegister(@RequestBody UserEntity userEntity) {
         ValidatorUtils.validateEntity(userEntity);
         Boolean flag = userService.userRegister(userEntity);
         return  flag ? Result.ok("success") : Result.error("failed");
@@ -45,11 +42,10 @@ public class UserController {
     /**
      * 用户登录
      * @param userEntity
-     * @param bindingResult
      * @return
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Result userLogin(@RequestBody UserEntity userEntity, BindingResult bindingResult) {
+    public Result userLogin(@RequestBody UserEntity userEntity) {
         Boolean flag = userService.userLogin(userEntity);
         return flag ? Result.ok(): Result.error("");
     }
