@@ -35,8 +35,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(LoginForm loginForm) {
-        LoginEntity loginEntity = userDao.login(loginForm);
-        if (loginEntity == null) {
+        LoginForm login = userDao.login(loginForm);
+        if (login == null) {
             return false;
         }
         return true;

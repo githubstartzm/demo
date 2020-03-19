@@ -44,4 +44,9 @@ public class UserController {
         boolean flag = userService.userRegister(userEntity);
         return flag ? Result.ok("注册成功") : Result.error("注册失败");
     }
+
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
+    public Result login() {
+        return  Result.ok("启动成功");
+    }
 }

@@ -13,7 +13,7 @@ import com.ali.superbaby.form.LoginForm;
  * @desc
  */
 public interface UserDao {
-    LoginEntity login(LoginForm loginForm);
+    LoginForm login(LoginForm loginForm);
 
     String getUserIdByUsername(String username);
 
